@@ -24,7 +24,7 @@
 
 <body>
     <!-- NAV BARS MENU with LOGIN dropdown Menu and Social Media log in -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-style">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">MTNC LOGO</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -48,7 +48,7 @@
             <!-- DROPDOWN MENU STARTS HERE -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="btn-group dropleft">
+                    <div class="btn-group dropdown">
                         <div class="social-buttons">
                             <a href="#" class="btn btn-fb"><i class="fab fa-facebook-square"></i></a>
                             <a href="#" class="btn btn-tw"><i class="fab fa-twitter"></i></a>
@@ -95,8 +95,8 @@
                     <p class="lead">A traveler? Let's discover the new city with just a click!</p>
                     <!-- Seacrh Box -->
                     <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <input class="form-control mr-sm-2" id="search-box" type="search" placeholder="City" aria-label="Search">
+                        <button class="btn btn btn-warning my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -116,6 +116,7 @@
         crossorigin="anonymous"></script>
     <!-- JavaScript LInk -->
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/effect.js"></script>
 </body>
 
 </html>
