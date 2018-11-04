@@ -1,3 +1,27 @@
 body {
-    background: gray;
+    background: url("../images/sunrise.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.navbar-light {
+    z-index: 99;
+}
+.container {
+    width: 960px;
+}
+.tittle {
+    margin: 5%;
+}
+/* Footer */
+.card-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
 }
