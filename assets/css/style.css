@@ -4,10 +4,30 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: 'Source Sans Pro', sans-serif;
 }
+
+#logo {
+    height: 40px;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.social-buttons {
+    margin-right: 1em;
+}
+
 #nav-style {
     z-index: 99;
 }
+
+.navbar {
+    background-color: rgba(255, 255, 255, .8);
+}
+
 .dropdown-menu.show {
     padding: 10px;
     width: 115%;
@@ -19,7 +39,7 @@ body {
 .container {
    display: flex;
    justify-content: center;
-   margin-top: 15%;
+   margin-top: 17%;
     color: white;
     text-shadow: rgb(77, 73, 73) 0px 0px 5px, rgb(97, 97, 97) 0px 0px 10px, rgb(87, 84, 84) 0px 0px 15px, 
     rgb(255, 251, 45) 0px 0px 20px, rgb(0, 81, 156) 0px 0px 30px;
@@ -33,9 +53,37 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.404);
-    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(92, 92, 92);
     font-weight: bold;
     text-align: center;
-    padding: 3px;
+    padding: 5px;
+    border: none;
+}
+
+/* adds background color to login button in nav bar */
+.loginStyle {
+    background-color: rgba(0,0,0,.8);
+    border: rgba(0,0,0,.8);
+}
+
+/* adds background hover color to login button in nav bar */
+.loginStyle:hover {
+    background-color: rgba(160, 123, 0, 0.9);
+    border: rgba(160, 123, 0, 0.9);
+}
+
+/* adds background color to social madia logos in nav bar */
+.btn-fb, .btn-tw, .btn-ig {
+    color: rgba(0,0,0,.8);
+}
+
+/* adds background hover color to social madia logos in nav bar */
+.btn-fb:hover, .btn-tw:hover, .btn-ig:hover {
+    color: rgba(160, 123, 0, 0.9);
+}
+
+/* adds background hover color to nav links */
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+    color: rgba(160, 123, 0, 0.9);
 }
