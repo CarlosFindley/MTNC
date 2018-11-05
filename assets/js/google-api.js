@@ -9,7 +9,8 @@ function initAutoMap() {
     // Linking searches to search-box id-ed input
     var mySearch = document.getElementById('mySearch');
     var searchBox = new google.maps.places.SearchBox(mySearch);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(mySearch);
+    // script below forces search bar onto google map UI
+    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(mySearch);
 
     // Bias SearchBox results in relation to current map's viewport
     map.addListener('bounds_changed', function(){
