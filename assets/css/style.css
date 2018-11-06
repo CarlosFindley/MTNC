@@ -11,6 +11,7 @@ body {
     height: 40px;
 }
 
+/* NAVBAR */
 .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
@@ -37,7 +38,7 @@ body {
     width: 105%;
 }
 
-
+/* Tittle container */
 .container {
     width: 960px;
     display: flex;
@@ -60,6 +61,7 @@ p {
     height: 400px;
     width: 400px;
 }
+
 /* Footer */
 .card-footer {
     position: fixed;
@@ -100,7 +102,9 @@ p {
 .navbar-light:hover .navbar-nav:hover .nav-link:hover {
     color: rgba(160, 123, 0, 0.9);
 }
-/* ==============MOBILE RESPONSIVE===================== */
+
+
+/* ========================MOBILE RESPONSIVE===================== */
 /* When the screen hit max-width 576px */
 @media (max-width: 576px) {
     /* log in form show */
@@ -119,6 +123,27 @@ p {
         width: 73%;
         margin-right: 5px;
     }
-    
 
  }
+
+ /* For small screen ip5 ~320px */
+ @media screen and (max-width: 320px){
+
+     .navbar>.container-fluid {
+        display: -ms-flexbox;
+        display: contents;
+     }
+
+     #logo {
+         height: 35px;
+     }
+
+     .btn {
+         padding: 5px;
+     }
+
+     .navbar-toggler {
+        padding: 0;
+     }
+ }
+
