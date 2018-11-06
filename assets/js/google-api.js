@@ -11,6 +11,11 @@ function initAutoMap() {
     var searchBox = new google.maps.places.SearchBox(mySearch);
     // script below forces search bar onto google map UI
     // map.controls[google.maps.ControlPosition.TOP_LEFT].push(mySearch);
+    $('#search-form').bind('keydown', function(e) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
+        }
+    });
 
     // Bias SearchBox results in relation to current map's viewport
     map.addListener('bounds_changed', function(){
