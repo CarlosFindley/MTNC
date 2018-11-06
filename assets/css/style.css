@@ -47,6 +47,9 @@ body {
 #search-box {
     width: 73%;
 }
+#city-map {
+    width: 250px;
+}
 /* Footer */
 .card-footer {
     position: fixed;
