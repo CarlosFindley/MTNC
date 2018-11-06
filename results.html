@@ -25,7 +25,7 @@
     <div class="container">
         <!-- <h1 class="display-4">Exploring City</h1> -->
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+            <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <div class="jumbotron jumbotron-fluid">
@@ -102,7 +102,12 @@
     <div class="card-footer text-muted">
         <p>copyright &copy;MTNC</p>
     </div>
-
+    <!-- =======jQuery Library Link========= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- =====GOOGLE API START====== -->
+    <script src="assets/js/google-api.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap" async defer ></script>
+    <!-- =====GOOGLE API END====== -->
     <!-- =================Bootraps jQuery Links ======================-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
