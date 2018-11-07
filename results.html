@@ -9,12 +9,13 @@
     <!-- Bootstrap Links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Awesome Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="assets/css/result-style.css">
 
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
@@ -22,12 +23,79 @@
 </head>
 
 <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav-style">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="logo" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About us<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News and Notes</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DROPDOWN MENU STARTS HERE -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group dropdown">
+                        <div class="social-buttons">
+                            <a href="#" class="btn btn-fb"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="btn btn-tw"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-ig"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-primary dropdown-toggle loginStyle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Log In
+                        </button>
+                        <div class="dropdown-menu">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                        with anyone
+                                        else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm float-right">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- nav and fluid end /div -->
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+
+    <!-- Results content goes here -->
+    <div class="container-fluid contentContainer">
         <!-- <h1 class="display-4">Exploring City</h1> -->
-        <form id="search-form" class="form-inline">
-            <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="formContainer">
+            <form id="search-form" class="form-inline">
+                <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
         <div class="jumbotron jumbotron-fluid">
             <div class="row">
                 <!-- ==================DISPLAY IMAGE COLUMN=============================-->
@@ -98,6 +166,13 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
     <!----------------------------- FOOTER---------------------------------->
     <div class="card-footer text-muted">
         <p>copyright &copy;MTNC</p>
@@ -106,7 +181,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- =====GOOGLE API START====== -->
     <script src="assets/js/google-api.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap" async defer ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap"
+        async defer></script>
     <!-- =====GOOGLE API END====== -->
     <!-- =================Bootraps jQuery Links ======================-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
