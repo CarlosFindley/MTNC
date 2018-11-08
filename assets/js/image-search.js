@@ -53,20 +53,21 @@ searchVerifier = function (searchTerm) {
     //if it is we instead use the search term that is next
     //in the data
     var queryURL = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${replaceSpaces(searchTerm)}`
-    var contentURl=`https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(searchTerm)}&redirects=true`
+    var contentURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(searchTerm)}&redirects=true`
     var searchObject;
     $.get(queryURL, function (data) {
         console.log(data)
-        searchObject=data
-    }).then(function(){
+        searchObject = data
+    }).then(function () {
         //this line checks if we're on a disambiguation page
         //and if so call the displayWikiContent with the first
         //valid search term
-        if (searchObject[2][0].includes("may refer to")){
+        if (searchObject[2][0].includes("may refer to")) {
             displayWikiContent(searchObject[2][1])
         }
         //otherwise we just use the current searchterm
-        else{
+        else {
+            console.log(searchTerm)
             dispatchWikiContent(searchTerm)
         }
     })
@@ -74,24 +75,36 @@ searchVerifier = function (searchTerm) {
 
 //actually takes in a search term that I know works and then uses
 //that to push content to the page
-displayWikiContent = function(goodSearchTerm){
-    var HistoryURl=`https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(goodSearchTerm)}&redirects=true`
-    var ImageUrl= `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpace(goodSearchTerm)}`
+var testObject //DELETE
+displayWikiContent = function (goodSearchTerm) {
+    var HistoryURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(goodSearchTerm)}&redirects=true`
+    var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
     //get the image
+    $.get(ImageUrl, function (data) {
+        testObject = data.query.pages
+        data.query.pages.forEach(function (element) {
+            if (element.title == goodSearchTerm) {
+                console.log(element)
+                makesImage(element.thumbnail.source)
+            }
+        })
+    })
+    //get the history
+    $.get(HistoryURl, function(data){
+
+    })
 }
 
 //work with front end on this
-makesImages = function (imageList) {
+makesImage = function (imageURL) {
     $("#city-images-display").empty()
-    for (i in imageList) {
-        var img = $("<img>")
-        img.attr("src", imageList[i])
-        img.css("max-width", '230px',
-            'max-height', '95px',
-            'width', 'auto',
-            'height', 'auto')
-        $("#city-images-display").append(img)
-    }
+    var img = $("<img>")
+    img.attr("src", imageURL)
+    img.css("max-width", '230px',
+        'max-height', '95px',
+        'width', 'auto',
+        'height', 'auto')
+    $("#city-images-display").append(img)
 }
 
 
@@ -99,9 +112,7 @@ makesImages = function (imageList) {
 $("#submit").on("click", function (event) {
     event.preventDefault()
     var searchTerm = $("#search").val()
-    console.log(searchTerm)
-
-    searchWiki(searchTerm)
+    searchVerifier(searchTerm)
 })
 
 
@@ -149,4 +160,4 @@ historyGenerator = function (searchTerm) {
 
 //need to grab main image
 //check if the first paragraph includes the quote "may also refer to"
-searchWiki2("San Francisco")
+displayWikiContent("San Francisco")
