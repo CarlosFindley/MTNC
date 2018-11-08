@@ -9,93 +9,177 @@
     <!-- Bootstrap Links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Awesome Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <!-- Google Fonts -->
-
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="assets/css/result-style.css">
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <!-- Moment JS Link -->
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="nav-style">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="logo" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About us<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News and Notes</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DROPDOWN MENU STARTS HERE -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group dropdown">
+                        <div class="social-buttons">
+                            <a href="#" class="btn btn-fb"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#" class="btn btn-tw"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-ig"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-primary dropdown-toggle loginStyle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Log In
+                        </button>
+                        <div class="dropdown-menu">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                        with anyone
+                                        else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm float-right">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- nav and fluid end /div -->
+        </div>
+    </nav>
+    <!-- END NAVBAR -->
+    <!-- =============================================================================================== -->
+
+    <!-- Results content goes here -->
     <div class="container">
         <!-- <h1 class="display-4">Exploring City</h1> -->
-        <form id="search-form" class="form-inline">
-            <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="row">
-                <!-- ==================DISPLAY IMAGE COLUMN=============================-->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>City Images</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Images changes every 5seconds, grab images from API -->
-                            <div id="city-images-display">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- =============================MAP COLUMN================================= -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>MAP</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Google Map Displays here -->
-                            <div id="city-map"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- End First Row -->
-
-            <div class="row">
-                <!--========================== POPULAR-SPOT AND HISTORY ========================= -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Things ToDo</h2>
-                        </div>
-                        <div class="card-body">
-                            <!-- Images changes every 5seconds, grab image from API -->
-                            <div id="popular-place">
-                                <i class="fas fa-map-marked-alt"></i> Popular Spot
-                            </div>
-                            <div id="Culture">
-                                <i class="fas fa-history"></i> History
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ======================FOODS AND NATURE================================= -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Things ToDo</h2>
-                        </div>
-                        <div class="card-body">
-                            <div id="popular-place">
-                                <i class="fas fa-utensils"></i> Eats
-                            </div>
-                            <div id="Culture">
-                                <i class="fas fa-hiking"></i> Nature
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Second Row -->
+        <div>
+            <form id="search-form" class="form-inline">
+                <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
+            </form>
         </div>
+        <!-- <div class="jumbotron jumbotron-fluid"> -->
+        <div class="row">
+            <!-- ===============================================-->
+            <!-- <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>City Name</h2>
+                    </div>
+                    <div class="card-body"> -->
+            <!-- Images changes every 5seconds, grab images from API -->
+            <!-- <div id="city-images-display">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- =============================CITIES IMAGES================================= -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>City Images</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Google Map Displays here -->
+                        <div id="city-images-display"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End First Row -->
+
+        <!-- ====================Buttons- OPTIONS===================== -->
+        <!-- Buttons -->
+        <div class="container">
+            <form class="form-inline" id="btn-form">
+
+                <div id="popular-place">
+                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-map-marked-alt"></i>
+                        Popular Spot</button>
+                </div>
+
+                <!-- <div id="history">
+                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-history"></i> History</button>
+                </div> -->
+
+                <div id="eats">
+                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-utensils"></i> Eats</button>
+                </div>
+
+                <!-- <div id="nature">
+                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-hiking"></i> Nature</button>
+                </div> -->
+
+            </form>
+        </div>
+        <!--End buttons -->
+        <!-- Second row -->
+        <div class="row">
+            <!-- ==================DISPLAY WHAT USER PICKed COLUMN=============================-->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Explore</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Display the list of what user picked here -->
+                        <div id="user-picked">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =============================MAP COLUMN================================= -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>MAP</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Google Map Displays here -->
+                        <div id="city-map"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ====================================================== -->
     </div>
 
     <!----------------------------- FOOTER---------------------------------->
@@ -106,7 +190,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- =====GOOGLE API START====== -->
     <script src="assets/js/google-api.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap" async defer ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap"
+        async defer></script>
     <!-- =====GOOGLE API END====== -->
     <!-- =================Bootraps jQuery Links ======================-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -116,7 +201,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!-- Effect javascript Link -->
-    <script src="assets/js/effect.js"></script>
+    <!-- <script src="assets/js/effect.js"></script> -->
 </body>
 
 </html>
