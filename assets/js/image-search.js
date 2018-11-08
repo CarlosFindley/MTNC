@@ -36,14 +36,14 @@ searchVerifier = function (searchTerm) {
         //and if so call the displayWikiContent with the first
         //valid search term
         console.log(searchObject[2])
-        if (searchObject[2][0].includes("may refer to")) {
+        if (searchObject[2][0].includes("may refer to")||searchObject[2][0].includes("most commonly refers to")) {
             console.log(searchTerm)
             console.log(`improved search: ${searchObject[1][1]}`)
             displayWikiContent(searchObject[1][1])
         }
         //otherwise we just use the current searchterm
         else {
-            displayWikiContent(replaceSpaces(searchTerm))
+            displayWikiContent(replaceSpaces(searchObject[1][0]))
         }
     })
 }
