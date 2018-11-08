@@ -1,9 +1,10 @@
 body {
-    background-image: url("../images/sunrise.jpg");
+    /* background-image: url("../images/sunrise.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(0, 0, 0);
 }

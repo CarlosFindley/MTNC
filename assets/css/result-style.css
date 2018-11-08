@@ -87,15 +87,22 @@ body {
 /* Search box */
 .form-inline {
     display: flex;
-    justify-content: flex-end; 
     margin-top: 10px;
-    margin-right: 25px;
+    margin-left: 13px;
+   
 }
 .form-inline .form-control {
-    width: 20%;
+    width: 70%;
 }
 
-#btn-form {
+.first-container{
+    display: flex;
+    justify-content: space-between;
+}
+.col {
+    padding: 0;
+}
+#popular-place {
     justify-content: flex-start;
     margin-left: 10px;
 }
