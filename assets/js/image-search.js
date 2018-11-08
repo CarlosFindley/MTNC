@@ -8,10 +8,15 @@
 
 
 //a function to replace all spaces with underscores in a string
+//and captitalizes all starting lower case letters
 replaceSpaces = function (inputString) {
-    for (i in inputString) {
-        if (inputString[i] == " ")
+    for (i=0; i<inputString.length;i++) {
+        inputString = inputString.replace(inputString[0], inputString[0].toUpperCase())
+        if (inputString[i] == " ") {
             inputString = inputString.replace(" ", "_")
+            
+            inputString = inputString.replace(inputString[i + 1], inputString[i + 1].toUpperCase())
+        }
     }
     return inputString
 }
@@ -56,19 +61,18 @@ searchVerifier = function (searchTerm) {
     var contentURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(searchTerm)}&redirects=true`
     var searchObject;
     $.get(queryURL, function (data) {
-        console.log(data)
         searchObject = data
     }).then(function () {
         //this line checks if we're on a disambiguation page
         //and if so call the displayWikiContent with the first
         //valid search term
         if (searchObject[2][0].includes("may refer to")) {
+            console.log(searchTerm)
             displayWikiContent(searchObject[2][1])
         }
         //otherwise we just use the current searchterm
         else {
-            console.log(searchTerm)
-            dispatchWikiContent(searchTerm)
+            displayWikiContent(replaceSpaces(searchTerm))
         }
     })
 }
@@ -77,7 +81,7 @@ searchVerifier = function (searchTerm) {
 //that to push content to the page
 var testObject //DELETE
 displayWikiContent = function (goodSearchTerm) {
-    var HistoryURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(goodSearchTerm)}&redirects=true`
+    // var HistoryURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(goodSearchTerm)}&redirects=true`
     var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
     //get the image
     $.get(ImageUrl, function (data) {
@@ -90,9 +94,8 @@ displayWikiContent = function (goodSearchTerm) {
         })
     })
     //get the history
-    $.get(HistoryURl, function(data){
-
-    })
+    historyGenerator(goodSearchTerm)
+    
 }
 
 //work with front end on this
@@ -111,7 +114,7 @@ makesImage = function (imageURL) {
 
 $("#submit").on("click", function (event) {
     event.preventDefault()
-    var searchTerm = $("#search").val()
+    var searchTerm = $("#search").val().trim()
     searchVerifier(searchTerm)
 })
 
@@ -151,7 +154,14 @@ historyGenerator = function (searchTerm) {
     $.get(queryURL, function (data) {
         testObject = data
         var articleText = data.query.pages[Object.keys(data.query.pages)[0]].extract
-        console.log(articleText)
+        //gets paragraphs equal to the paragraphcount
+        var paragraphCount=3
+        var currentIndex=-1
+        for (i=0;i<=paragraphCount;i++){
+            currentIndex=articleText.indexOf("</p>",currentIndex+1)
+        }
+        finalText=HTMLparser(articleText.slice(0,currentIndex))
+        console.log(finalText)
     })
 }
 //historyGenerator("San Francisco")
@@ -160,4 +170,4 @@ historyGenerator = function (searchTerm) {
 
 //need to grab main image
 //check if the first paragraph includes the quote "may also refer to"
-displayWikiContent("San Francisco")
+ 
