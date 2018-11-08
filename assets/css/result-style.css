@@ -1,7 +1,7 @@
 
 /* Most of this might not be needed since JS is taking care of the background images.  Also wondering if we can make the background images change (have a timer) at an interval */
 body {
-    background-image: url("../images/sunrise.jpg");
+    background-image: url("../images/colorblock.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -65,16 +65,15 @@ body {
 }
 
 /* Container with search bar and results */
-.contentContainer {
-    /* background: rgba(255, 255, 255, .8); */
-    margin-top: 20px;
+.jumbotron-fluid {
+    background: rgba(255, 255, 255, 0.575);
 }
 
-.formContainer {
+/* .formContainer {
     width: 50%;
     padding: 15px;
     margin: 0 auto;
-}
+} */
 
 /* .container {
    display: flex;
@@ -85,14 +84,36 @@ body {
     rgb(255, 251, 45) 0px 0px 20px, rgb(0, 81, 156) 0px 0px 30px;
 } */
 
+/* Search box */
 .form-inline {
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    justify-content: flex-end; 
+    margin-top: 10px;
+    margin-right: 25px;
+}
+.form-inline .form-control {
+    width: 20%;
 }
 
-.form-inline .form-control {
-    width: 85%;
+#btn-form {
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+.btn-style {
+    padding: 3px;
+    margin: 3px;
+    font-size: 1.2rem;
+}
+
+/* CARD */
+.card-header {
+    padding: 5px;
+    text-align: center;
+}
+
+.display {
+    width: 300px;
+    height: auto;
 }
 
 /* Footer */
@@ -103,10 +124,13 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     color: rgb(92, 92, 92);
-    font-weight: bold;
+    /* font-weight: bold; */
     text-align: center;
     padding: 5px;
     border: none;
 }
-
+/* ============ */
+.row {
+    margin: 10px;
+}
 
