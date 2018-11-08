@@ -1,11 +1,3 @@
-//we need something for when it redirects
-//maybe change it so it just grabs the thumbnail?
-
-//https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=Stack%20Overflow&redirects=true
-//need to get the html data and parse it
-
-//`https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&wbptterms=description&gpssearch=${searchTerm}&gpslimit=20`
-
 
 //a function to replace all spaces with underscores in a string
 //and captitalizes all starting lower case letters
@@ -20,36 +12,13 @@ replaceSpaces = function (inputString) {
     }
     return inputString
 }
-//takes in search value and then appends the image
-// searchWiki = function (searchTerm) {
-//     var dataObject
-//     var imageListFiles = []
-//     var imageURLs = []
-//     var queryURL = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&titles=${replaceSpaces(searchTerm)}&format=json&prop=images`
-//     console.log(queryURL)
-//     $.get(queryURL, function (data) {
-//         dataObject = data
-//     }).then(function () {
-//         console.log(dataObject) //testing
-//         var myPages = dataObject.query.pages
-//         var myKey = Object.keys(myPages)[0]
-//         var imageList = myPages[myKey].images
-//         for (i in imageList) {
-//             imageListFiles.push(imageList[i].title)
-//         }
-//         for (i in imageListFiles) {
-//             imageListFiles[i] = (replaceSpaces(imageListFiles[i]))
-//         }
-//         for (i in imageListFiles) {
-//             $.get(`https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&titles=${imageListFiles[i]}&prop=imageinfo&iiprop=url&format=json`, function (data) {
-//                 imageURLs.push(data.query.pages[-1].imageinfo[0].url)
-//                 console.log(data.query.pages[-1].imageinfo[0].url)
-//             }).then(function () { makesImages(imageURLs) })
-//         }
-//     })
-// }
-
-
+//remove underscores and adds spaces
+addSpaces=function(inputString){
+    for(i in inputString){
+        inputString=inputString.replace("_"," ")
+    }
+    return inputString
+}
 searchVerifier = function (searchTerm) {
     //gets results for the search 
     //check if the search term is a disambiguation page,
@@ -66,9 +35,11 @@ searchVerifier = function (searchTerm) {
         //this line checks if we're on a disambiguation page
         //and if so call the displayWikiContent with the first
         //valid search term
+        console.log(searchObject[2])
         if (searchObject[2][0].includes("may refer to")) {
             console.log(searchTerm)
-            displayWikiContent(searchObject[2][1])
+            console.log(`improved search: ${searchObject[1][1]}`)
+            displayWikiContent(searchObject[1][1])
         }
         //otherwise we just use the current searchterm
         else {
@@ -81,13 +52,14 @@ searchVerifier = function (searchTerm) {
 //that to push content to the page
 var testObject //DELETE
 displayWikiContent = function (goodSearchTerm) {
-    // var HistoryURl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=${replaceSpaces(goodSearchTerm)}&redirects=true`
     var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
     //get the image
     $.get(ImageUrl, function (data) {
+        console.log("goodsearchterm: "+goodSearchTerm)
         testObject = data.query.pages
+        
         data.query.pages.forEach(function (element) {
-            if (element.title == goodSearchTerm) {
+            if (element.title == goodSearchTerm ||element.title==addSpaces(goodSearchTerm)) {
                 console.log(element)
                 makesImage(element.thumbnail.source)
             }
@@ -161,7 +133,10 @@ historyGenerator = function (searchTerm) {
             currentIndex=articleText.indexOf("</p>",currentIndex+1)
         }
         finalText=HTMLparser(articleText.slice(0,currentIndex))
-        console.log(finalText)
+        $("#city-map").empty()
+        var historyParagraph=$("<p>")
+        historyParagraph.text(finalText)
+        $("#city-map").append(historyParagraph)
     })
 }
 //historyGenerator("San Francisco")
