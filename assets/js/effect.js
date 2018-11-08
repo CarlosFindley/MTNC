@@ -1,3 +1,4 @@
+// This is one option
 var i=0
 var myInterval = setInterval(function () {
     
@@ -10,17 +11,16 @@ var myInterval = setInterval(function () {
     $("body").css({
         "background-image": urlVal, "background-size": "cover",
         "background-attachment": "fixed", "background-position": "center", "background-repeat": "no-repeat", "background-color": "rgba(0, 0, 0, 0.3)", "background-blend-mode": "overlay",
-        "transition":" all 1s ease-out"
+        "transition":" all 1s ease"
     });
 
 }, 5000)
 
-
-var bgImages = ["boat.jpg", "cali-beach.jpg", "dining-fisherman.jpg", "longbeach.jpg", "muir-wood.jpg", "palace-of-fine-art.jpg", "sf-city.jpg", "sf-night.jpg", "sf-street.jpg", "sunrise.jpg"];
-var bgImgValue = bgImages[Math.floor(Math.random() * bgImages.length)];
-var urlVal = `url(assets/images/${bgImgValue})`
-$("body").css({
-    "background-image": urlVal, "background-size": "cover",
-    "background-attachment": "fixed", "background-position": "center", "background-repeat": "no-repeat", "background-color": "rgba(0, 0, 0, 0.3)", "background-blend-mode": "overlay", "transition":" all 1s ease-in-out"
-});
-
+// This is another option
+// var bgImages = ["boat.jpg", "cali-beach.jpg", "dining-fisherman.jpg", "longbeach.jpg", "muir-wood.jpg", "palace-of-fine-art.jpg", "sf-city.jpg", "sf-night.jpg", "sf-street.jpg", "sunrise.jpg"];
+// var bgImgValue = bgImages[Math.floor(Math.random() * bgImages.length)];
+// var urlVal = `url(assets/images/${bgImgValue})`
+// $("body").css({
+//     "background-image": urlVal, "background-size": "cover",
+//     "background-attachment": "fixed", "background-position": "center", "background-repeat": "no-repeat", "background-color": "rgba(0, 0, 0, 0.3)", "background-blend-mode": "overlay", "transition":" all 1s ease-in-out"
+// });
