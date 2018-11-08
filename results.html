@@ -19,6 +19,9 @@
     <!-- Firebase Link -->
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <!-- Moment JS Link -->
+    <!-- =======jQuery Library Link========= -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -88,12 +91,34 @@
 
     <!-- Results content goes here -->
     <div class="container">
-        <!-- <h1 class="display-4">Exploring City</h1> -->
-        <div>
-            <form id="search-form" class="form-inline">
-                <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-                <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
-            </form>
+        <div class="first-container">
+            <div class="buttons-container">
+                <form class="form-inline" id="btn-form">
+
+                    <div id="popular-place">
+                        <button type="button" class="btn btn-warning btn-style"><i class="fas fa-map-marked-alt"></i>
+                            Popular Spot</button>
+                    </div>
+
+                    <!-- <div id="history">
+                            <button type="button" class="btn btn-warning btn-style"><i class="fas fa-history"></i> History</button>
+                        </div> -->
+
+                    <div id="eats">
+                        <button type="button" class="btn btn-warning btn-style"><i class="fas fa-utensils"></i> Eats</button>
+                    </div>
+
+                    <!-- <div id="nature">
+                            <button type="button" class="btn btn-warning btn-style"><i class="fas fa-hiking"></i> Nature</button>
+                        </div> -->
+                </form>
+            </div>
+            <div class="searchbox-container">
+                <form id="search-form" class="form-inline">
+                    <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+                    <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
+                </form>
+            </div>
         </div>
         <!-- <div class="jumbotron jumbotron-fluid"> -->
         <div class="row">
@@ -114,7 +139,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>City Images</h4>
+                        <h4>MAP</h4>
                     </div>
                     <div class="card-body">
                         <!-- Google Map Displays here -->
@@ -125,31 +150,6 @@
         </div>
         <!-- End First Row -->
 
-        <!-- ====================Buttons- OPTIONS===================== -->
-        <!-- Buttons -->
-        <div class="container">
-            <form class="form-inline" id="btn-form">
-
-                <div id="popular-place">
-                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-map-marked-alt"></i>
-                        Popular Spot</button>
-                </div>
-
-                <!-- <div id="history">
-                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-history"></i> History</button>
-                </div> -->
-
-                <div id="eats">
-                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-utensils"></i> Eats</button>
-                </div>
-
-                <!-- <div id="nature">
-                    <button type="button" class="btn btn-warning btn-style"><i class="fas fa-hiking"></i> Nature</button>
-                </div> -->
-
-            </form>
-        </div>
-        <!--End buttons -->
         <!-- Second row -->
         <div class="row">
             <!-- ==================DISPLAY WHAT USER PICKed COLUMN=============================-->
@@ -181,18 +181,17 @@
         </div>
         <!-- ====================================================== -->
     </div>
-
     <!----------------------------- FOOTER---------------------------------->
     <div class="card-footer text-muted">
         <p>copyright &copy;MTNC</p>
     </div>
-    <!-- =======jQuery Library Link========= -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- =====GOOGLE API START====== -->
     <script src="assets/js/google-api.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnFGOr1PRVTEf6CWP4UBNx_C8ofKGJpZM&libraries=places&callback=initAutoMap"
         async defer></script>
     <!-- =====GOOGLE API END====== -->
+
     <!-- =================Bootraps jQuery Links ======================-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
