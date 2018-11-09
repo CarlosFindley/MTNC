@@ -1,9 +1,13 @@
 var apiKey = config.yelpAPI;
 var postmanKey = config.postman;
 
-// var myCity = $("#mySearch").val();
+var myCity = $("#mySearch").val();
+console.log(myCity);
+if (myCity.includes(",")){
+  myCity=myCity.slice(0,myCity.indexOf(","))
+}
 
-var myCity = "Berkeley";
+// var myCity = "Berkeley";
 console.log(myCity);
 
 $('#search-form').bind('keydown', function(e) {
@@ -24,7 +28,7 @@ var food = {
   }
 }
 
-$(document).on("click", "button", function(){
+$(document).ready(function(){
   $.ajax(food).done(function (response) {
     console.log(response);
     for (var i=0; i<response.businesses.length; i++) {
