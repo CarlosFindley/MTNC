@@ -75,8 +75,8 @@ makesImage = function (imageURL) {
     $("#city-images-display").empty()
     var img = $("<img>")
     img.attr("src", imageURL)
-    img.css("max-width", '230px',
-        'max-height', '95px',
+    img.css("max-width", '350px',
+        'max-height', '200px',
         'width', 'auto',
         'height', 'auto')
     $("#city-images-display").append(img)
@@ -125,7 +125,7 @@ historyGenerator = function (searchTerm) {
     $.get(queryURL, function (data) {
         var articleText = data.query.pages[Object.keys(data.query.pages)[0]].extract
         //gets paragraphs equal to the paragraphcount
-        var paragraphCount=3
+        var paragraphCount=1
         var currentIndex=-1
         for (i=0;i<=paragraphCount;i++){
             currentIndex=articleText.indexOf("</p>",currentIndex+1)
