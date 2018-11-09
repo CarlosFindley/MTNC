@@ -1,4 +1,3 @@
-
 //a function to replace all spaces with underscores in a string
 //and captitalizes all starting lower case letters
 replaceSpaces = function (inputString) {
@@ -47,7 +46,6 @@ searchVerifier = function (searchTerm) {
         }
     })
 }
-
 //actually takes in a search term that I know works and then uses
 //that to push content to the page
 var testObject //DELETE
@@ -67,9 +65,7 @@ displayWikiContent = function (goodSearchTerm) {
     })
     //get the history
     historyGenerator(goodSearchTerm)
-    
 }
-
 //work with front end on this
 makesImage = function (imageURL) {
     $("#city-images-display").empty()
@@ -81,18 +77,12 @@ makesImage = function (imageURL) {
         'height', 'auto')
     $("#city-images-display").append(img)
 }
-
-
-
+//The actual onclick button
 $("#submit").on("click", function (event) {
     event.preventDefault()
     var searchTerm = $("#search").val().trim()
     searchVerifier(searchTerm)
 })
-
-
-var testURL = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&titles=Stack%20Overflow&redirects=true"
-
 //the parser strips out html tags, works recursively
 HTMLparser = function (textString) {
     if (!textString.includes("<")) {
@@ -118,13 +108,10 @@ HTMLparser = function (textString) {
         }
     }
 }
-var testObject//DELETE
-
 //generates the text from the wikipedia article about the search term
 historyGenerator = function (searchTerm) {
     var queryURL = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&titles=${replaceSpaces(searchTerm)}&redirects=true`;
     $.get(queryURL, function (data) {
-        testObject = data
         var articleText = data.query.pages[Object.keys(data.query.pages)[0]].extract
         //gets paragraphs equal to the paragraphcount
         var paragraphCount=3
@@ -139,10 +126,3 @@ historyGenerator = function (searchTerm) {
         $("#city-map").append(historyParagraph)
     })
 }
-//historyGenerator("San Francisco")
-
-//need to grab the first paragraph or two
-
-//need to grab main image
-//check if the first paragraph includes the quote "may also refer to"
- 
