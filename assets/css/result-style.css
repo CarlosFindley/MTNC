@@ -102,7 +102,7 @@ body {
 .col {
     padding: 0;
 }
-#popular-place {
+#eats {
     justify-content: flex-start;
     margin-left: 10px;
 }
