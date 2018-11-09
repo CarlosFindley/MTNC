@@ -94,11 +94,11 @@
         <div class="first-container">
             <div class="buttons-container">
                 <form class="form-inline" id="btn-form">
-
+                    <!-- 
                     <div id="popular-place">
                         <button type="button" class="btn btn-warning btn-style"><i class="fas fa-map-marked-alt"></i>
                             Popular Spot</button>
-                    </div>
+                    </div> -->
 
                     <!-- <div id="history">
                             <button type="button" class="btn btn-warning btn-style"><i class="fas fa-history"></i> History</button>
@@ -143,7 +143,7 @@
                     </div>
                     <div class="card-body">
                         <!-- Google Map Displays here -->
-                        <div id="city-images-display"></div>
+                        <div id="city-map"></div>
                     </div>
                 </div>
             </div>
@@ -153,33 +153,48 @@
         <!-- Second row -->
         <div class="row">
             <!-- ==================DISPLAY WHAT USER PICKed COLUMN=============================-->
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Explore</h4>
+                        <h4>Gallery</h4>
                     </div>
                     <div class="card-body">
                         <!-- Display the list of what user picked here -->
-                        <div id="user-picked">
+                        <div id="city-images-display">
                         </div>
                     </div>
                 </div>
             </div>
             <!-- =============================MAP COLUMN================================= -->
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">
-                        <h4>MAP</h4>
+                        <h4>History</h4>
                     </div>
                     <div class="card-body">
                         <!-- Google Map Displays here -->
-                        <div id="city-map"></div>
-
+                        <div id="history"></div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- ====================================================== -->
+        <div class="row">
+            <div class="col-12">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>EATS</h4>
+                        </div>
+                        <div class="card-body">
+                            <!-- Google Map Displays here -->
+                            <div id="yelp-data"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <!----------------------------- FOOTER---------------------------------->
     <div class="card-footer text-muted">
