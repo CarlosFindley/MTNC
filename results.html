@@ -27,6 +27,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light" id="nav-style">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="assets/logo/logo.png" alt="logo" id="logo"></a>
@@ -93,60 +94,21 @@
 
     <!-- Results content goes here -->
     <div class="container">
-        <div class="first-container">
-            <div class="buttons-container">
-                <form class="form-inline" id="btn-form">
-                    <!-- 
-                    <div id="popular-place">
-                        <button type="button" class="btn btn-warning btn-style"><i class="fas fa-map-marked-alt"></i>
-                            Popular Spot</button>
-                    </div> -->
-
-                    <!-- <div id="history">
-                            <button type="button" class="btn btn-warning btn-style"><i class="fas fa-history"></i> History</button>
-                        </div> -->
-
-                    <div id="eats">
-                        <button type="button" class="btn btn-warning btn-style"><i class="fas fa-utensils"></i> Eats</button>
-                    </div>
-
-                    <!-- <div id="nature">
-                            <button type="button" class="btn btn-warning btn-style"><i class="fas fa-hiking"></i> Nature</button>
-                        </div> -->
-                </form>
-            </div>
-            <div class="searchbox-container">
-                <form id="search-form" class="form-inline">
-                    <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-                    <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
-                </form>
-            </div>
+        <div>
+            <form id="search-form" class="form-inline">
+                <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
+            </form>
         </div>
-        <!-- <div class="jumbotron jumbotron-fluid"> -->
         <div class="row">
-            <!-- ===============================================-->
-            <!-- <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>City Name</h2>
-                    </div>
-                    <div class="card-body"> -->
-            <!-- Images changes every 5seconds, grab images from API -->
-            <!-- <div id="city-images-display">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <!-- =============================CITIES IMAGES================================= -->
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card map">
+                    <!-- <div class="card-header">
                         <h4>MAP</h4>
-                    </div>
-                    <div class="card-body">
-                        <!-- Google Map Displays here -->
-                        <div id="city-map" style="height: 350px"></div>
-                    </div>
+                    </div> -->
+                    <!-- Google Map Displays here -->
+                    <div id="city-map" style="height: 350px"></div>
                 </div>
             </div>
         </div>
@@ -160,10 +122,8 @@
                     <div class="card-header">
                         <h4>Gallery</h4>
                     </div>
-                    <div class="card-body">
-                        <!-- Display the list of what user picked here -->
-                        <div id="city-images-display">
-                        </div>
+                    <!-- Display the list of what user picked here -->
+                    <div id="city-images-display">
                     </div>
                 </div>
             </div>
@@ -173,10 +133,8 @@
                     <div class="card-header">
                         <h4>History</h4>
                     </div>
-                    <div class="card-body">
-                        <!-- Google Map Displays here -->
-                        <div id="history"></div>
-                    </div>
+                    <!-- Google Map Displays here -->
+                    <div id="history"></div>
                 </div>
             </div>
         </div>
@@ -191,13 +149,15 @@
                         <div class="card-header">
                             <h4>EATS</h4>
                         </div>
-                        <div class="card-body">
-                            <!-- Google Map Displays here -->
-                            <div id="yelp-data"></div>
-                        </div>
+
+                        <!-- Google Map Displays here -->
+                        <div id="yelp-data"></div>
+
                     </div>
-                <!-- </div> -->
-            <!-- </div> -->
+                </div>
+            </div>
+        </div>
+
         <!-- </div> -->
     </div>
     </div>
@@ -227,7 +187,9 @@
     <!-- yelpAPI Fusion File Link -->
     <script src="assets/js/food-api.js"></script>
     <!-- Effect javascript Link -->
-    <!-- <script src="assets/js/effect.js"></script> -->
+    <script src="assets/js/effect.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <!-- <script src="assets/js/fallingleaves.js"></script> -->
 </body>
 
 </html>

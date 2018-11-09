@@ -1,11 +1,13 @@
 
 /* Most of this might not be needed since JS is taking care of the background images.  Also wondering if we can make the background images change (have a timer) at an interval */
 body {
-    background-image: url("../images/colorblock.jpg");
+    background-image: url("../images/fall.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(0, 0, 0);
 }
@@ -86,19 +88,12 @@ body {
 
 /* Search box */
 .form-inline {
+    justify-content: flex-end;
     display: flex;
     margin-top: 10px;
-    margin-left: 13px;
-   
-}
-.form-inline .form-control {
-    width: 70%;
+    margin-right: 25px;
 }
 
-.first-container{
-    display: flex;
-    justify-content: space-between;
-}
 .col {
     padding: 0;
 }
@@ -114,7 +109,7 @@ body {
 
 /* CARD */
 .card-header {
-    padding: 5px;
+    padding: 0px;
     text-align: center;
 }
 
@@ -141,3 +136,13 @@ body {
     margin: 10px;
 }
 
+/* Falling Leaves Effects */
+.dot{
+    width:35px;
+    height:35px;
+    position:absolute;
+    background: url("../images/red-lobed-fall-clipart-leaf.png");
+    background-size: 100%;
+    z-index: 99;
+  }
+#effect-container {width:100%; height:100%;}
