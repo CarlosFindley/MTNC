@@ -54,7 +54,7 @@ searchVerifier = function (searchTerm) {
 //that to push content to the page
 var testObject //DELETE
 displayWikiContent = function (goodSearchTerm) {
-    var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
+    var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=550&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
     //get the image
     $.get(ImageUrl, function (data) {
         console.log("goodsearchterm: "+goodSearchTerm)
