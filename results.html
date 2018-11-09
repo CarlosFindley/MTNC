@@ -95,7 +95,6 @@
 
         <!-- Results content goes here -->
         <div class="container">
-
             <div>
                 <form id="search-form" class="form-inline">
                     <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
@@ -106,10 +105,6 @@
                 <!-- =============================CITIES IMAGES================================= -->
                 <div class="col-md-12">
                     <div class="card map">
-                        <!-- <div class="card-header">
-                        <h4>MAP</h4>
-                    </div> -->
-                        <!-- Google Map Displays here -->
                         <div id="city-map" style="height: 350px"></div>
                     </div>
                 </div>
@@ -119,7 +114,7 @@
             <!-- Second row -->
             <div class="row">
                 <!-- ==================DISPLAY WHAT USER PICKed COLUMN=============================-->
-                <div class="col-md-7">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Gallery</h4>
@@ -130,7 +125,9 @@
                     </div>
                 </div>
                 <!-- =============================MAP COLUMN================================= -->
-                <div class="col-md-5">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>History</h4>
@@ -141,20 +138,13 @@
                 </div>
             </div>
             <!-- ====================================================== -->
-            <div id="yelp-container"></div>
-
-            <!-- <div class="row"> -->
-            <!-- <div class="col-12"> -->
-            <!-- <div class="col-md-12"> -->
-
             <div class="card">
+                <div id="yelp-container"></div>
                 <div class="card-header">
                     <h4>EATS</h4>
                 </div>
-
                 <!-- Google Map Displays here -->
                 <div id="yelp-data"></div>
-
             </div>
         </div>
     </div>
