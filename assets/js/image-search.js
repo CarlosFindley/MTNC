@@ -5,7 +5,6 @@ replaceSpaces = function (inputString) {
         inputString = inputString.replace(inputString[0], inputString[0].toUpperCase())
         if (inputString[i] == " ") {
             inputString = inputString.replace(" ", "_")
-            
             inputString = inputString.replace(inputString[i + 1], inputString[i + 1].toUpperCase())
         }
     }
@@ -19,6 +18,11 @@ addSpaces=function(inputString){
     return inputString
 }
 searchVerifier = function (searchTerm) {
+    //first remove any data after the comma caused by the 
+    //google function
+    if (searchTerm.includes(",")){
+        searchTerm=searchTerm.slice(0,searchTerm.indexOf(","))
+    }
     //gets results for the search 
     //check if the search term is a disambiguation page,
     //we do this by extracting the html and checking for 
@@ -77,12 +81,19 @@ makesImage = function (imageURL) {
         'height', 'auto')
     $("#city-images-display").append(img)
 }
-//The actual onclick button
-$("#submit").on("click", function (event) {
+
+// Form submission processor
+$("#search-form").submit( function(event){
     event.preventDefault()
-    var searchTerm = $("#search").val().trim()
-    searchVerifier(searchTerm)
+    searchVerifier($("#mySearch").val().trim())
 })
+$('#search-form').bind('keydown', function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        searchVerifier($("#mySearch").val().trim()) 
+    }
+});
+
 //the parser strips out html tags, works recursively
 HTMLparser = function (textString) {
     if (!textString.includes("<")) {
@@ -120,9 +131,9 @@ historyGenerator = function (searchTerm) {
             currentIndex=articleText.indexOf("</p>",currentIndex+1)
         }
         finalText=HTMLparser(articleText.slice(0,currentIndex))
-        $("#city-map").empty()
+        $("#history").empty()
         var historyParagraph=$("<p>")
         historyParagraph.text(finalText)
-        $("#city-map").append(historyParagraph)
+        $("#history").append(historyParagraph)
     })
 }
