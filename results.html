@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Dancing+Script|Kaushan+Script|Yesteryear" rel="stylesheet">
     <!-- CSS Links -->
     <link rel="stylesheet" href="assets/css/result-style.css">
     <!-- Firebase Link -->
@@ -21,6 +21,8 @@
     <!-- Moment JS Link -->
     <!-- =======jQuery Library Link========= -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- ====Wikipedia Search====-->
+    <script src="assets/js/image-search.js"></script>
     <!-- yelpAPI Fusion File Link -->
     <script src="assets/js/config.js"></script>
 
@@ -95,20 +97,23 @@
 
         <!-- Results content goes here -->
         <div class="container">
-
-            <div>
-                <form id="search-form" class="form-inline">
-                    <input id="mySearch" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
-                    <button class="btn btn-warning my-2 my-sm-0 btn-xs" type="submit"><i class="fas fa-search-location"></i></button>
-                </form>
+            <div class="first-container">
+                <div class="tittle">
+                    <h1>The exPlorist</h1>
+                    <p>Just pack your bags and go. Be spontaneous!</p>
+                </div>
+                <!-- Seacrh Box -->
+                <div class="search">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" id="search-box" type="search" placeholder="City" aria-label="Search">
+                        <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
             </div>
             <div class="row">
-                <!-- =============================CITIES IMAGES================================= -->
+                <!-- =============================MAP================================= -->
                 <div class="col-md-12">
                     <div class="card map">
-                        <!-- <div class="card-header">
-                        <h4>MAP</h4>
-                    </div> -->
                         <!-- Google Map Displays here -->
                         <div id="city-map" style="height: 350px"></div>
                     </div>
@@ -118,7 +123,7 @@
 
             <!-- Second row -->
             <div class="row">
-                <!-- ==================DISPLAY WHAT USER PICKed COLUMN=============================-->
+                <!-- ==================GALLERY=============================-->
                 <div class="col-md-7">
                     <div class="card">
                         <div class="card-header">
@@ -129,36 +134,32 @@
                         </div>
                     </div>
                 </div>
-                <!-- =============================MAP COLUMN================================= -->
+                <!-- =============================HISTORY================================= -->
                 <div class="col-md-5">
                     <div class="card">
                         <div class="card-header">
-                            <h4>History</h4>
+                            <h4>Back in Time</h4>
                         </div>
-                        <!-- Google Map Displays here -->
+                        <!-- History display here -->
                         <div id="history"></div>
                     </div>
                 </div>
             </div>
             <!-- ====================================================== -->
             <div id="yelp-container"></div>
-
-            <!-- <div class="row"> -->
-            <!-- <div class="col-12"> -->
-            <!-- <div class="col-md-12"> -->
-
-            <div class="card">
-                <div class="card-header">
-                    <h4>EATS</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Cheers to Delicious Adventures</h4>
+                        </div>
+                        <!-- YELP-Restaurants Displays here -->
+                        <div id="yelp-data"></div>
+                    </div>
                 </div>
-
-                <!-- Google Map Displays here -->
-                <div id="yelp-data"></div>
-
             </div>
         </div>
     </div>
-    <!-- </div> -->
 
 
     <!----------------------------- FOOTER---------------------------------->
@@ -172,8 +173,7 @@
         async defer></script>
     <!-- =====GOOGLE API END====== -->
 
-    <!-- ====Wikipedia Search====-->
-    <script src="assets/js/image-search.js"></script>
+
     <!-- =================Bootraps jQuery Links ======================-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
