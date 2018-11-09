@@ -23,22 +23,40 @@ var food = {
   }
 }
 
-$(document).ready(function(){
+$(document).on("click", "button", function(){
   $.ajax(food).done(function (response) {
     console.log(response);
     for (var i=0; i<response.businesses.length; i++) {
-      var yelpDiv = "<div>";
 
-      yelpDiv.attr("class", "row");
+      var yelpDivContainer = $("<div>");
+      yelpDivContainer.attr("class", "row");
 
-      $("#yelp-data").append(`<div><img src="${response.businesses[i].image_url}"></div>`);
-      $("#yelp-data").append(`<div>${response.businesses[i].name}</div>`);
-      $("#yelp-data").append(`<div>Price: ${response.businesses[i].price}</div>`);
-      $("#yelp-data").append(`<div>Yelp Rating: ${response.businesses[i].rating}</div>`);
-      $("#yelp-data").append(`<div>${response.businesses[i].location.address1}</div>`);
-      $("#yelp-data").append(`<div>${response.businesses[i].display_phone}</div>`);
-      // temporary styling
-      $("#yelp-data").append(`<div>${"-------------"}</div>`);
+      var yelpDiv = $("<div>");
+      yelpDiv.attr("class", "col-12-lg");
+
+      var foodImg = $("<img>");
+      foodImg.attr("src", response.businesses[i].image_url);
+      foodImg.attr("style", 'width: 200px');
+      foodImg.attr("style", 'height: 200px');
+
+      // p tags for info
+      var pName = $("<p>").text(response.businesses[i].name);
+      var pRating = $("<p>").text("Yelp Rating: " + response.businesses[i].rating);
+      var pPrice = $("<p>").text("Price: " + response.businesses[i].price);
+      var pLocation = $("<p>").text(response.businesses[i].location.address1);
+      var pPhone = $("<p>").text(response.businesses[i].display_phone);
+
+      yelpDiv.append(foodImg);
+      yelpDiv.append(pName);
+      yelpDiv.append(pRating);
+      yelpDiv.append(pPrice);
+      yelpDiv.append(pLocation);
+      yelpDiv.append(pPhone);
+
+      yelpDivContainer.append(yelpDiv);
+
+      $("#yelp-data").append(yelpDivContainer);
+
     }
     
   });
