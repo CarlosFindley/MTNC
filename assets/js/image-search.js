@@ -38,10 +38,7 @@ searchVerifier = function (searchTerm) {
         //this line checks if we're on a disambiguation page
         //and if so call the displayWikiContent with the first
         //valid search term
-        console.log(searchObject[2])
         if (searchObject[2][0].includes("may refer to")||searchObject[2][0].includes("most commonly refers to")) {
-            console.log(searchTerm)
-            console.log(`improved search: ${searchObject[1][1]}`)
             displayWikiContent(searchObject[1][1])
         }
         //otherwise we just use the current searchterm
@@ -52,17 +49,12 @@ searchVerifier = function (searchTerm) {
 }
 //actually takes in a search term that I know works and then uses
 //that to push content to the page
-var testObject //DELETE
 displayWikiContent = function (goodSearchTerm) {
-    var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=350&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
+    var ImageUrl = `https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=1000&pilimit=20&wbptterms=description&gpssearch=${replaceSpaces(goodSearchTerm)}`
     //get the image
     $.get(ImageUrl, function (data) {
-        console.log("goodsearchterm: "+goodSearchTerm)
-        testObject = data.query.pages
-        
         data.query.pages.forEach(function (element) {
             if (element.title == goodSearchTerm ||element.title==addSpaces(goodSearchTerm)) {
-                console.log(element)
                 makesImage(element.thumbnail.source)
             }
         })
