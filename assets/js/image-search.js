@@ -125,7 +125,7 @@ historyGenerator = function (searchTerm) {
     $.get(queryURL, function (data) {
         var articleText = data.query.pages[Object.keys(data.query.pages)[0]].extract
         //gets paragraphs equal to the paragraphcount
-        var paragraphCount=1
+        var paragraphCount=2
         var currentIndex=-1
         for (i=0;i<=paragraphCount;i++){
             currentIndex=articleText.indexOf("</p>",currentIndex+1)

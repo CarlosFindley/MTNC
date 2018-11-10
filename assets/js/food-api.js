@@ -41,23 +41,25 @@ $(document).ready(function () {
         var yelpDivContainer = $("<div>");
         yelpDivContainer.attr("class", "row");
 
-        var yelpDiv = $("<div>");
-        yelpDiv.attr("class", "col-md-6");
-
         var imgDiv = $("<div>");
-        imgDiv.attr("class", "col-md-6");
+        imgDiv.addClass("col-md-8");
+
+        var yelpDiv = $("<div>");
+        yelpDiv.addClass("col-md-4 text-style");
+
 
         var foodImg = $("<img>");
+        foodImg.addClass("yelp-img");
         foodImg.attr("src", response.businesses[i].image_url);
-        foodImg.attr("style", 'width: 200px');
-        foodImg.attr("style", 'height: 200px');
+        foodImg.attr("style", 'width: 350px');
+        foodImg.attr("style", 'height: 350px');
 
 
         // p tags for info
-        var pName = $("<p>").text(response.businesses[i].name);
-        var pRating = $("<p>").text("Yelp Rating: " + response.businesses[i].rating);
+        var pName = $("<h3>").text(response.businesses[i].name);
+        var pRating = $("<h5>").text("Yelp Rating: " + response.businesses[i].rating);
         var pPrice = $("<p>").text("Price: " + response.businesses[i].price);
-        var pLocation = $("<p>").text(response.businesses[i].location.address1);
+        var pLocation = $("<h6>").text(response.businesses[i].location.address1);
         var pPhone = $("<p>").text(response.businesses[i].display_phone);
 
         imgDiv.append(foodImg);
@@ -67,7 +69,7 @@ $(document).ready(function () {
         yelpDiv.append(pLocation);
         yelpDiv.append(pPhone);
 
-        yelpDivContainer.append(yelpDiv, imgDiv);
+        yelpDivContainer.append(imgDiv, yelpDiv);
 
         $("#yelp-data").append(yelpDivContainer);
 
