@@ -17,11 +17,18 @@
     <!-- CSS Links -->
     <link rel="stylesheet" href="assets/css/result-style.css">
     <!-- Firebase Link -->
+
+    <!-- Slick -->
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <!-- Add the new slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="assets/slick/slick-theme.css"/>
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <!-- Moment JS Link -->
     <!-- =======jQuery Library Link========= -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- yelpAPI Fusion File Link -->
+
+    <script src="assets/js/slickCarousel.js"></script>
     <script src="assets/js/config.js"></script>
 
 </head>
@@ -124,12 +131,12 @@
             <div class="row">
                 <!-- ========GALLERY======-->
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card cardImgStyle">
                         <div class="card-header">
                             <h2>Gallery</h2>
                         </div>
-                        <!--CITY IMAGES display here-->
-                        <div id="city-images-display">
+                            <!--CITY IMAGES display here-->
+                            <div id="city-images-display" class="slide">
                         </div>
                     </div>
                 </div>
@@ -140,7 +147,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Back In Time</h2>
+                            <h2>City History</h2>
                         </div>
                         <!-- History display -->
                         <div id="history"></div>
@@ -165,6 +172,16 @@
         </div>
         <!--End container-->
     </div>
+
+    <div class="content contentStyle">
+            <div class="slideshow">
+              <div class="slide slide1">Content</div>
+              <div class="slide slide2">Content</div>
+              <div class="slide slide3">Content</div>
+            </div>
+          </div>
+
+
     <!--End effect-container-->
     <!----------------------------- FOOTER---------------------------------->
     <div class="card-footer text-muted">
@@ -200,7 +217,12 @@
     <!-- Effect javascript Link -->
     <script src="assets/js/effect.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-    <script src="assets/js/fallingleaves.js"></script>
+    <!-- <script src="assets/js/fallingleaves.js"></script> -->
+
+    <!-- Slick -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="assets/slick/slick.min.js"></script>
+    
 </body>
 
 </html>
