@@ -42,10 +42,10 @@ $(document).ready(function () {
         yelpDivContainer.attr("class", "row");
 
         var imgDiv = $("<div>");
-        imgDiv.addClass("col-md-8");
+        imgDiv.addClass("col-lg-8");
 
         var yelpDiv = $("<div>");
-        yelpDiv.addClass("col-md-4 text-style");
+        yelpDiv.addClass("col-lg-4 text-style");
 
 
         var foodImg = $("<img>");

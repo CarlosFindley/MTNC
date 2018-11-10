@@ -1,7 +1,7 @@
 
 /* Most of this might not be needed since JS is taking care of the background images.  Also wondering if we can make the background images change (have a timer) at an interval */
 body {
-    background-image: url("../images/cali-beach.jpg");
+    background-image: url("../images/city-night.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -113,7 +113,7 @@ h3 {
 .form-inline {
     justify-content: flex-end;
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 25px;
 }
 
@@ -142,11 +142,11 @@ h3 {
     background-color: rgba(255, 166, 0, 0.904);
 
 }
-
+/* 
 .display {
     width: 300px;
     height: auto;
-}
+} */
 
 .cardImgStyle {
     text-align: center;
@@ -156,6 +156,7 @@ h3 {
 .pStyle {
     padding: 1em;
     line-height: 1.6em;
+
 }
 
 /* Footer */
