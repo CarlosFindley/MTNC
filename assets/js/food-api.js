@@ -1,6 +1,6 @@
 var apiKey = config.yelpAPI;
 var postmanKey = config.postman;
-
+console.log("food app running")
 $('#search-form').submit(function (e) {
   e.preventDefault();
   foodAJAX($("#mySearch").val().trim());
