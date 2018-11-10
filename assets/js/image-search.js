@@ -65,8 +65,7 @@ displayWikiContent = function (goodSearchTerm) {
 //work with front end on this
 makesImage = function (imageURL) {
     $("#city-images-display").empty()
-    var img = $("<img>")
-    img.addClass("city-img");
+    var img = $("<img class='imgStyle'>")
     img.attr("src", imageURL)
     img.css("max-width", '100%',
         'max-height', 'auto',
@@ -125,7 +124,7 @@ historyGenerator = function (searchTerm) {
         }
         finalText=HTMLparser(articleText.slice(0,currentIndex))
         $("#history").empty()
-        var historyParagraph=$("<p>")
+        var historyParagraph=$("<p class='pStyle'>")
         historyParagraph.text(finalText)
         $("#history").append(historyParagraph)
     })

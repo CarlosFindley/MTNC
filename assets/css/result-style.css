@@ -32,6 +32,7 @@ body {
 
 .navbar {
     background-color: rgba(255, 255, 255, .8);
+    margin-bottom: 30px;
 }
 
 .dropdown-menu.show {
@@ -147,9 +148,15 @@ h3 {
     height: auto;
 } */
 
-.city-img {
-    padding: 35px;
-    padding-bottom: 35px;
+.cardImgStyle {
+    text-align: center;
+}
+
+/* Style the History paragraph */
+.pStyle {
+    padding: 1em;
+    line-height: 1.6em;
+
 }
 
 /* Footer */
@@ -179,3 +186,152 @@ h3 {
 #effect-container {width:100%; height:100%;}
 
 /*  */
+
+.slideshow {
+    margin: 100px auto;
+    margin-bottom: 150px;
+    width: 50%;
+    height: 300px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.slide1 {
+    background: rgba(255, 255, 255, .8);
+    margin: 20px 10px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-right: 140px;
+    padding-left: 140px;
+}
+
+.slide2 {
+    background: rgba(255, 255, 255, .8);
+    margin: 20px 10px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-right: 140px;
+    padding-left: 140px;
+}
+
+.slide3 {
+    background: rgba(255, 255, 255, .8);
+    margin: 20px 10px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    padding-right: 140px;
+    padding-left: 140px;
+}
+
+/* mobile responsiveness */
+@media screen and (max-width: 430px) {
+    .first-container {
+        display: block;
+    } .tittle {
+        margin: 30px 10px;
+        text-align: center;
+    } .form-control {
+        width: 80%;
+        margin-right: 5px;
+    } .imgStyle {
+        width: 293px;
+    } .slideshow {
+        margin: 80px auto;
+        margin-bottom: 100px;
+        width: 80%;
+        height: 300px;
+        text-align: center;
+        font-weight: 900;
+    } .slide1 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    } .slide2 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    } .slide3 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .imgStyle {
+        width: 332px;
+    } 
+}
+
+@media screen and (max-width: 411px) {
+    .imgStyle {
+        width: 329px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .first-container {
+        display: block;
+    } .tittle {
+        margin: 30px 10px;
+        text-align: center;
+    } .form-control {
+        width: 77.5%;
+        margin-right: 5px;
+    } .imgStyle {
+        width: 293px;
+    } .slideshow {
+        margin: 80px auto;
+        margin-bottom: 100px;
+        width: 80%;
+        height: 300px;
+        text-align: center;
+        font-weight: 900;
+    } .slide1 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    } .slide2 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    } .slide3 {
+        background: rgba(255, 255, 255, .8);
+        margin: 10px 10px;
+        padding-top: 127px;
+        padding-bottom: 127px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .imgStyle {
+        width: 278px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .form-control {
+        width: 73%;
+        margin-right: 5px;
+    } .imgStyle {
+        width: 238px;
+    }
+}
+
