@@ -66,9 +66,10 @@ displayWikiContent = function (goodSearchTerm) {
 makesImage = function (imageURL) {
     $("#city-images-display").empty()
     var img = $("<img>")
+    img.addClass("city-img");
     img.attr("src", imageURL)
-    img.css("max-width", '350px',
-        'max-height', '200px',
+    img.css("max-width", '100%',
+        'max-height', 'auto',
         'width', 'auto',
         'height', 'auto')
     $("#city-images-display").append(img)
