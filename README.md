@@ -6,7 +6,7 @@ The Explorist Apps helps users can find city history, city images, and top resta
 
 <img src="assets/images/demo.gif">
 
-## Technogoies use:
+## Technologies used:
 <li> JavaScript
 <li> Google and Yelp APIs
 <li> Bootstrap/ CSS3
