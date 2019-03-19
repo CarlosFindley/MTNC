@@ -1,6 +1,6 @@
 # The Explorist
 
-The Explorist Apps helps users can find city history, city images, and top restaurants in the new city.
+The Explorist Apps helps users find city history, city images, and top restaurants in a city.
 
 ### Demo:  https://carlosfindley.github.io/MTNC/
 
